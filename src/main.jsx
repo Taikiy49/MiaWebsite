@@ -94,6 +94,15 @@ const studyPrograms = [
     image: '/london.jpeg',
     alt: 'Me during my study-abroad experience at the University of Roehampton in London',
     copy: 'My time at the University of Roehampton gave me the opportunity to study and experience life in London. It added another valuable international perspective to my education.'
+  },
+  {
+    id: 'copenhagen',
+    tab: 'Copenhagen Business School',
+    institution: 'Copenhagen Business School',
+    location: 'Copenhagen, Denmark',
+    image: '/nyhavn.jpeg',
+    alt: 'Me at Nyhavn during my study-abroad experience at Copenhagen Business School',
+    copy: 'In Fall 2024, I studied abroad at Copenhagen Business School in Denmark with support from the William R. Johnson Scholarship. The experience strengthened the international perspective at the heart of my business education.'
   }
 ];
 
