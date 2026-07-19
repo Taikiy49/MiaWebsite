@@ -203,6 +203,13 @@ function App() {
       </section>
 
       <section className="education section">
+        <figure className="grad-card">
+          <img src="/mia_uh_grad.jpeg" alt="Me celebrating my graduation from the University of Hawaiʻi at Mānoa" />
+          <figcaption>
+            <span>Class of 2026</span>
+            <strong>University of Hawaiʻi at Mānoa</strong>
+          </figcaption>
+        </figure>
         <div className="education-card">
           <div className="section-label light"><span>05</span> Education</div>
           <p className="degree-type">Bachelor of Business Administration</p>

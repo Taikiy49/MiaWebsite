@@ -116,7 +116,14 @@ em { color: var(--coral); font-weight: 500; }
 .skill:nth-child(odd) { margin-right: 22px; }
 .skill svg { color: var(--coral); }
 
-.education { background: var(--paper); display: grid; grid-template-columns: 1.4fr .6fr; gap: 22px; padding-top: 22px; padding-bottom: 22px; }
+.education { background: var(--paper); display: grid; grid-template-columns: .68fr 1.12fr .7fr; gap: 18px; padding: 22px; }
+.grad-card { min-width: 0; min-height: 590px; margin: 0; position: relative; overflow: hidden; background: var(--forest); }
+.grad-card img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 51% center; transition: transform .7s ease; }
+.grad-card:hover img { transform: scale(1.025); }
+.grad-card::after { content: ''; position: absolute; inset: 55% 0 0; background: linear-gradient(transparent, rgba(8,31,27,.75)); pointer-events: none; }
+.grad-card figcaption { position: absolute; z-index: 1; left: 28px; right: 28px; bottom: 28px; color: var(--paper); }
+.grad-card figcaption span { display: block; margin-bottom: 9px; color: #f6a998; font-size: 9px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
+.grad-card figcaption strong { font: 500 19px/1.25 'Playfair Display', serif; }
 .education-card { background: var(--sage); padding: clamp(42px, 6vw, 88px); min-height: 570px; display: flex; flex-direction: column; }
 .education-card .section-label { margin-bottom: auto; }
 .degree-type { text-transform: uppercase; font-size: 10px; letter-spacing: .16em; }
@@ -165,7 +172,10 @@ footer h2 { font: 500 clamp(47px, 7.2vw, 100px)/1.02 'Playfair Display', serif; 
   .timeline-row { grid-template-columns: 38px 1fr; }
   .timeline-date { grid-column: 2; }
   .timeline-main { grid-column: 2; }
-  .education { grid-template-columns: 1fr; }
+  .education { grid-template-columns: 1fr 1fr; }
+  .grad-card { min-height: 560px; }
+  .education-card { grid-column: 2; }
+  .award-card { grid-column: 1 / -1; }
   .education-card { min-height: 500px; }
   .award-card { min-height: 450px; }
 }
@@ -199,6 +209,9 @@ footer h2 { font: 500 clamp(47px, 7.2vw, 100px)/1.02 'Playfair Display', serif; 
   .skill-list { grid-template-columns: 1fr; }
   .skill:nth-child(odd) { margin-right: 0; }
   .education { padding-left: 12px; padding-right: 12px; }
+  .education { grid-template-columns: 1fr; }
+  .grad-card { min-height: 540px; }
+  .education-card, .award-card { grid-column: auto; }
   .education-card { padding: 38px 28px; }
   .education-card h2 { font-size: 30px; overflow-wrap: anywhere; }
   .school-row { align-items: flex-start; gap: 20px; }
