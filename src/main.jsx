@@ -366,10 +366,11 @@ function App() {
           <h2>Human Resource Management,<br />International Business & Management</h2>
           <div className="school-row">
             <div><strong>University of Hawaiʻi at Mānoa</strong><span>Shidler College of Business · 2026</span></div>
-            <div className="seal">UH<br /><small>MĀNOA</small></div>
+            <div className="education-logo"><img src="/logos/uh.jpeg" alt="University of Hawaiʻi seal" /></div>
           </div>
           <div className="high-school-row">
             <div><strong>Henry J. Kaiser High School</strong><span>High School Diploma · Honolulu, Hawaiʻi</span></div>
+            <div className="education-logo"><img src="/logos/kaiser.png" alt="Henry J. Kaiser High School Cougars logo" /></div>
           </div>
         </div>
         <div className="award-card">
