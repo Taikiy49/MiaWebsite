@@ -87,6 +87,7 @@ function App() {
         <div className={menuOpen ? 'nav-links open' : 'nav-links'}>
           <a href="#about" onClick={closeMenu}>About</a>
           <a href="#experience" onClick={closeMenu}>Experience</a>
+          <a href="#pookela" onClick={closeMenu}>Highlights</a>
           <a href="#skills" onClick={closeMenu}>Expertise</a>
           <a className="nav-contact" href="mailto:umedamia@gmail.com" onClick={closeMenu}>Let’s connect <ArrowUpRight size={15} /></a>
         </div>
@@ -146,8 +147,40 @@ function App() {
         </div>
       </section>
 
+      <section className="pookela section" id="pookela">
+        <div className="pookela-heading">
+          <div className="section-label"><span>03</span> Featured achievement</div>
+          <p className="kicker">Poʻokela Internship Program · 2026</p>
+          <h2>Learning in service.<br /><em>Leading with purpose.</em></h2>
+          <p className="pookela-intro">At the Honolulu Liquor Commission, Mia transformed her internship experience into practical contributions across employee training, workplace education, and event coordination.</p>
+        </div>
+        <figure className="presentation-feature">
+          <img src="/pookela_presentation_picture.jpeg" alt="Mia Umeda presenting her Honolulu Liquor Commission internship accomplishments at the Poʻokela Graduation Ceremony" />
+          <figcaption>
+            <span>01 / Presenting the work</span>
+            <p>Mia shared the training initiatives, event planning, and employee education projects she completed while serving with the Honolulu Liquor Commission.</p>
+          </figcaption>
+        </figure>
+        <div className="recognition-feature">
+          <figure>
+            <img src="/pookela_group_picture.jpeg" alt="Mia Umeda with the Mayor and City and County of Honolulu leaders at the Poʻokela Graduation Ceremony" />
+          </figure>
+          <div className="recognition-copy">
+            <span className="feature-index">02 / Recognition</span>
+            <h3>Poʻokela Graduation Ceremony</h3>
+            <p>Recognized by the Mayor for her contributions to the City and County of Honolulu, alongside leaders who supported and celebrated the program’s graduates.</p>
+            <div className="achievement-list">
+              <span>Training development</span>
+              <span>Employee education</span>
+              <span>Event planning</span>
+              <span>Public service</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="skills section" id="skills">
-        <div className="section-label"><span>03</span> Expertise</div>
+        <div className="section-label"><span>04</span> Expertise</div>
         <div className="skills-layout">
           <div>
             <p className="kicker">What I bring</p>
@@ -161,7 +194,7 @@ function App() {
 
       <section className="education section">
         <div className="education-card">
-          <div className="section-label light"><span>04</span> Education</div>
+          <div className="section-label light"><span>05</span> Education</div>
           <p className="degree-type">Bachelor of Business Administration</p>
           <h2>Human Resource Management,<br />International Business & Management</h2>
           <div className="school-row">

@@ -83,6 +83,25 @@ em { color: var(--coral); font-weight: 500; }
 .details { max-width: 750px; color: rgba(255,255,255,.66); line-height: 1.65; font-size: 14px; margin: 18px 0 0; padding-left: 17px; }
 .details li + li { margin-top: 7px; }
 
+.pookela { background: var(--paper); }
+.pookela-heading { max-width: 920px; margin-bottom: 78px; }
+.pookela-heading .section-label { margin-bottom: 58px; }
+.pookela-heading h2 { font: 500 clamp(43px, 5.5vw, 79px)/1.08 'Playfair Display', serif; letter-spacing: -.04em; margin: 0 0 34px; }
+.pookela-intro { max-width: 680px; margin: 0 0 0 auto; font-size: 17px; font-weight: 300; line-height: 1.8; }
+.presentation-feature { margin: 0; }
+.presentation-feature img { display: block; width: 100%; aspect-ratio: 1.75; object-fit: cover; }
+.presentation-feature figcaption { display: grid; grid-template-columns: .42fr .58fr; gap: 40px; padding: 24px 0 78px; border-bottom: 1px solid var(--line); }
+.presentation-feature figcaption span, .feature-index { color: var(--coral); font-size: 10px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+.presentation-feature figcaption p { max-width: 670px; margin: 0; font-size: 14px; line-height: 1.7; }
+.recognition-feature { display: grid; grid-template-columns: 1.18fr .82fr; gap: clamp(38px, 6vw, 90px); align-items: center; padding-top: 78px; }
+.recognition-feature figure { margin: 0; }
+.recognition-feature img { display: block; width: 100%; aspect-ratio: 1.28; object-fit: cover; object-position: center; }
+.recognition-copy h3 { font: 500 clamp(32px, 4vw, 55px)/1.08 'Playfair Display', serif; margin: 24px 0; }
+.recognition-copy > p { font-size: 15px; font-weight: 300; line-height: 1.8; }
+.achievement-list { display: grid; grid-template-columns: 1fr 1fr; margin-top: 38px; }
+.achievement-list span { padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+.achievement-list span:nth-child(odd) { margin-right: 18px; }
+
 .skills { background: var(--cream); }
 .skills-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(50px, 10vw, 150px); }
 .kicker { text-transform: uppercase; color: var(--coral); font-size: 10px; letter-spacing: .18em; font-weight: 600; margin: 0 0 25px; }
@@ -132,6 +151,9 @@ footer h2 { font: 500 clamp(47px, 7.2vw, 100px)/1.02 'Playfair Display', serif; 
   .hero-intro { max-width: 540px; }
   .scroll-note { display: none; }
   .intro-content, .skills-layout, .section-heading { grid-template-columns: 1fr; }
+  .presentation-feature figcaption, .recognition-feature { grid-template-columns: 1fr; }
+  .presentation-feature figcaption { gap: 16px; }
+  .recognition-feature { gap: 36px; }
   .section-heading { gap: 40px; }
   .timeline-row { grid-template-columns: 38px 1fr; }
   .timeline-date { grid-column: 2; }
@@ -152,6 +174,16 @@ footer h2 { font: 500 clamp(47px, 7.2vw, 100px)/1.02 'Playfair Display', serif; 
   .section { padding-left: 22px; padding-right: 22px; }
   .section-label { margin-bottom: 45px; }
   .intro h2, .skills h2 { font-size: clamp(39px, 12vw, 52px); }
+  .pookela-heading h2 { font-size: clamp(39px, 12vw, 52px); }
+  .pookela-heading { margin-bottom: 52px; }
+  .pookela-intro { font-size: 15px; }
+  .presentation-feature img { aspect-ratio: 1.25; }
+  .presentation-feature figcaption { padding-bottom: 55px; }
+  .recognition-feature { padding-top: 55px; }
+  .recognition-feature img { aspect-ratio: 1.08; }
+  .recognition-copy h3 { font-size: 34px; }
+  .achievement-list { grid-template-columns: 1fr; }
+  .achievement-list span:nth-child(odd) { margin-right: 0; }
   .intro-content { gap: 42px; }
   .intro-body > p { font-size: 15px; line-height: 1.8; }
   .timeline-row { grid-template-columns: 27px 1fr; gap: 13px; padding: 28px 0; }
