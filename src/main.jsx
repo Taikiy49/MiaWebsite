@@ -126,12 +126,25 @@ function App() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -45px' });
+
+    document.querySelectorAll('[data-reveal]').forEach((element) => revealObserver.observe(element));
     onScroll();
     window.addEventListener('scroll', onScroll);
     if (window.location.hash) {
       requestAnimationFrame(() => document.querySelector(window.location.hash)?.scrollIntoView());
     }
-    return () => window.removeEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      revealObserver.disconnect();
+    };
   }, []);
 
   const closeMenu = () => setMenuOpen(false);
@@ -155,7 +168,7 @@ function App() {
       <header className="hero" id="top">
         <div className="hero-orbit orbit-one" />
         <div className="hero-orbit orbit-two" />
-        <div className="hero-copy reveal">
+        <div className="hero-copy" data-reveal>
           <p className="eyebrow"><span /> Human Resources · Honolulu, Hawaiʻi</p>
           <h1>People-first.<br /><em>Purpose-led.</em></h1>
           <p className="hero-intro">A human resources professional creating thoughtful, well-designed experiences that help people learn, grow, and do their best work.</p>
@@ -164,7 +177,7 @@ function App() {
             <a href="mailto:umedamia@gmail.com" className="text-link">Get in touch <ArrowUpRight size={16} /></a>
           </div>
         </div>
-        <div className="hero-mark">
+        <div className="hero-mark" data-reveal data-reveal-right style={{ '--reveal-delay': '180ms' }}>
           <img src="/mia_pfp.jpeg" alt="Mia Umeda" />
           <div className="portrait-ring" aria-hidden="true" />
           <p>Human resources<br />with heart.</p>
@@ -174,7 +187,7 @@ function App() {
 
       <section className="intro section" id="about">
         <div className="section-label"><span>01</span> About</div>
-        <div className="intro-content">
+        <div className="intro-content" data-reveal>
           <h2>I believe great workplaces begin with <em>genuine care.</em></h2>
           <div className="intro-body">
             <p>Born and based in Honolulu, I bring a calm, people-centered approach to human resources. My experience spans employee training, public service, university operations, recruitment, and student support.</p>
@@ -185,13 +198,13 @@ function App() {
       </section>
 
       <section className="experience section" id="experience">
-        <div className="section-heading">
+        <div className="section-heading" data-reveal>
           <div className="section-label light"><span>02</span> Experience</div>
           <h2>A career grounded in <em>service & growth.</em></h2>
         </div>
         <div className="timeline">
           {experiences.map((item, index) => (
-            <article className="timeline-row" key={item.role}>
+            <article className="timeline-row" key={item.role} data-reveal style={{ '--reveal-delay': `${Math.min(index * 55, 220)}ms` }}>
               <div className="timeline-number">0{index + 1}</div>
               <div className="timeline-date">{item.period}</div>
               <div className="timeline-main">
@@ -217,7 +230,7 @@ function App() {
 
       <section className="pookela section" id="pookela">
         <div className="section-label"><span>03</span> Featured achievement</div>
-        <div className="pookela-case-study">
+        <div className="pookela-case-study" data-reveal>
           <div className="pookela-heading">
             <p className="kicker">Poʻokela Internship Program · 2026</p>
             <h2>Learning in service.<br /><em>Leading with purpose.</em></h2>
@@ -240,7 +253,7 @@ function App() {
             </figcaption>
           </figure>
         </div>
-        <div className="recognition-feature">
+        <div className="recognition-feature" data-reveal>
           <figure>
             <img src="/pookela_group_picture.jpeg" alt="I am pictured with the Mayor and City and County of Honolulu leaders at the Poʻokela Graduation Ceremony" />
             <figcaption>Poʻokela Graduation Ceremony · Honolulu, Hawaiʻi</figcaption>
@@ -256,7 +269,7 @@ function App() {
 
       <section className="skills section" id="skills">
         <div className="section-label"><span>04</span> Expertise</div>
-        <div className="skills-layout">
+        <div className="skills-layout" data-reveal>
           <div>
             <p className="kicker">What I bring</p>
             <h2>Practical skills.<br /><em>Human impact.</em></h2>
@@ -281,7 +294,7 @@ function App() {
 
       <section className="global-study section">
         <div className="section-label light"><span>05</span> Global learning</div>
-        <div className="global-study-layout">
+        <div className="global-study-layout" data-reveal>
           <figure className="study-photo" key={activeStudy.id}>
             <img src={activeStudy.image} alt={activeStudy.alt} />
             <figcaption>{activeStudy.institution} · {activeStudy.location}</figcaption>
@@ -318,14 +331,14 @@ function App() {
       </section>
 
       <section className="education section">
-        <figure className="grad-card">
+        <figure className="grad-card" data-reveal>
           <img src="/mia_uh_grad.jpeg" alt="Me celebrating my graduation from the University of Hawaiʻi at Mānoa" />
           <figcaption>
             <span>Class of 2026</span>
             <strong>University of Hawaiʻi at Mānoa</strong>
           </figcaption>
         </figure>
-        <div className="education-card">
+        <div className="education-card" data-reveal style={{ '--reveal-delay': '90ms' }}>
           <div className="section-label light"><span>06</span> Education</div>
           <p className="degree-type">Bachelor of Business Administration</p>
           <h2>Human Resource Management,<br />International Business & Management</h2>
@@ -337,7 +350,7 @@ function App() {
             <div><strong>Henry J. Kaiser High School</strong><span>High School Diploma · Honolulu, Hawaiʻi</span></div>
           </div>
         </div>
-        <div className="award-card">
+        <div className="award-card" data-reveal style={{ '--reveal-delay': '180ms' }}>
           <figure className="copenhagen-photo">
             <img src="/nyhavn.jpeg" alt="Me at Nyhavn during my study-abroad experience in Copenhagen, Denmark" />
             <figcaption>Nyhavn · Copenhagen</figcaption>
@@ -352,7 +365,7 @@ function App() {
         </div>
       </section>
 
-      <footer id="contact">
+      <footer id="contact" data-reveal>
         <p className="eyebrow"><span /> Let’s work together</p>
         <h2>Good work starts with<br /><em>a conversation.</em></h2>
         <a className="email" href="mailto:umedamia@gmail.com">umedamia@gmail.com <ArrowUpRight /></a>
