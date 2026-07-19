@@ -204,6 +204,29 @@ function App() {
         </div>
       </section>
 
+      <section className="global-study section">
+        <div className="section-label light"><span>05</span> Global learning</div>
+        <div className="global-study-layout">
+          <figure className="yonsei-photo">
+            <img src="/yonsei.jpeg" alt="Me during my study-abroad experience at Yonsei University in South Korea" />
+            <figcaption>Yonsei University · South Korea</figcaption>
+          </figure>
+          <div className="global-study-copy">
+            <p className="kicker">Study abroad</p>
+            <h2>A wider world.<br /><em>A broader perspective.</em></h2>
+            <p>During my study-abroad experience at Yonsei University, I had the opportunity to live and learn in South Korea—an experience that became an important part of my international education.</p>
+            <div className="global-detail">
+              <span>Institution</span>
+              <strong>Yonsei University</strong>
+            </div>
+            <div className="global-detail">
+              <span>Location</span>
+              <strong>South Korea</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="education section">
         <figure className="grad-card">
           <img src="/mia_uh_grad.jpeg" alt="Me celebrating my graduation from the University of Hawaiʻi at Mānoa" />
@@ -213,7 +236,7 @@ function App() {
           </figcaption>
         </figure>
         <div className="education-card">
-          <div className="section-label light"><span>05</span> Education</div>
+          <div className="section-label light"><span>06</span> Education</div>
           <p className="degree-type">Bachelor of Business Administration</p>
           <h2>Human Resource Management,<br />International Business & Management</h2>
           <div className="school-row">
