@@ -207,21 +207,27 @@ function App() {
       <section className="global-study section">
         <div className="section-label light"><span>05</span> Global learning</div>
         <div className="global-study-layout">
-          <figure className="yonsei-photo">
-            <img src="/yonsei.jpeg" alt="Me during my study-abroad experience at Yonsei University in South Korea" />
-            <figcaption>Yonsei University · South Korea</figcaption>
-          </figure>
+          <div className="global-photos">
+            <figure className="yonsei-photo">
+              <img src="/yonsei.jpeg" alt="Me during my study-abroad experience at Yonsei University in South Korea" />
+              <figcaption>Yonsei University · South Korea</figcaption>
+            </figure>
+            <figure className="london-photo">
+              <img src="/london.jpeg" alt="Me in London during my study-abroad experience" />
+              <figcaption>Study abroad · London</figcaption>
+            </figure>
+          </div>
           <div className="global-study-copy">
             <p className="kicker">Study abroad</p>
             <h2>A wider world.<br /><em>A broader perspective.</em></h2>
-            <p>During my study-abroad experience at Yonsei University, I had the opportunity to live and learn in South Korea—an experience that became an important part of my international education.</p>
+            <p>Studying abroad gave me the opportunity to live and learn in both South Korea and London. Each experience became an important part of my international education and broadened the way I see people, culture, and community.</p>
             <div className="global-detail">
               <span>Institution</span>
               <strong>Yonsei University</strong>
             </div>
             <div className="global-detail">
-              <span>Location</span>
-              <strong>South Korea</strong>
+              <span>Experience</span>
+              <strong>London, United Kingdom</strong>
             </div>
           </div>
         </div>
