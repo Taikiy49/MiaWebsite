@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import {
   ArrowDown, ArrowUpRight, ChevronLeft, ChevronRight, Cloud, Code2, Database,
   FileCheck2, FileText, GraduationCap, Handshake, Languages, MapPin, Menu,
-  MonitorCog, Presentation, School, UserSearch, X
+  MonitorCog, Presentation, RotateCw, School, UserSearch, X
 } from 'lucide-react';
 import './styles.css';
 
@@ -133,6 +133,7 @@ function App() {
   const [scrolled, setScrolled] = useState(false);
   const [activeStudyId, setActiveStudyId] = useState('roehampton');
   const [activeShrmPhoto, setActiveShrmPhoto] = useState(0);
+  const [iboFlipped, setIboFlipped] = useState(false);
   const activeStudy = studyPrograms.find((program) => program.id === activeStudyId);
 
   useEffect(() => {
@@ -336,8 +337,36 @@ function App() {
         </div>
       </section>
 
+      <section className="ibo section">
+        <div className="section-label"><span>05</span> Campus involvement</div>
+        <div className="ibo-layout" data-reveal>
+          <div className="ibo-copy">
+            <p className="kicker">International Business Organization</p>
+            <h2>Connecting beyond<br /><em>the classroom.</em></h2>
+            <p>As a member of IBO, I took part in campus events and professional development opportunities that brought students together around international business, career readiness, and community.</p>
+            <div className="ibo-meta">
+              <span>Role</span><strong>Member</strong>
+              <span>Organization</span><strong>Shidler College of Business</strong>
+            </div>
+          </div>
+          <button className={iboFlipped ? 'ibo-flip-card flipped' : 'ibo-flip-card'} type="button" onClick={() => setIboFlipped(!iboFlipped)} aria-pressed={iboFlipped} aria-label="Flip between IBO event photos">
+            <span className="ibo-card-inner">
+              <span className="ibo-card-face ibo-card-front">
+                <img src="/ibo_super_clubs_day.jpeg" alt="International Business Organization members at Super Clubs Day" />
+                <span className="ibo-card-caption"><small>01 / Community</small>Super Clubs Day</span>
+              </span>
+              <span className="ibo-card-face ibo-card-back">
+                <img src="/ibo_workshop_dissecting_interview_questions.jpeg" alt="International Business Organization members at the Dissecting Interview Questions workshop" />
+                <span className="ibo-card-caption"><small>02 / Professional development</small>Dissecting Interview Questions Workshop</span>
+              </span>
+            </span>
+            <span className="flip-hint"><RotateCw size={14} /> Click to flip</span>
+          </button>
+        </div>
+      </section>
+
       <section className="global-study section">
-        <div className="section-label light"><span>05</span> Global learning</div>
+        <div className="section-label light"><span>06</span> Global learning</div>
         <div className="global-study-layout" data-reveal>
           <figure className="study-photo" key={activeStudy.id}>
             <img src={activeStudy.image} alt={activeStudy.alt} />
@@ -386,7 +415,7 @@ function App() {
           </figcaption>
         </figure>
         <div className="education-card">
-          <div className="section-label light"><span>06</span> Education</div>
+          <div className="section-label light"><span>07</span> Education</div>
           <p className="degree-type">Bachelor of Business Administration</p>
           <h2>Human Resource Management,<br />International Business & Management</h2>
           <div className="school-row">
