@@ -20,7 +20,7 @@ const experiences = [
     period: 'Jan 2025 — Jun 2026',
     role: 'Admissions Operations Assistant',
     company: 'University of Hawaiʻi at Mānoa · Undergraduate Admissions',
-    logo: '/logos/uh-manoa.png',
+    logo: '/logos/uh.jpeg',
     logoAlt: 'University of Hawaiʻi at Mānoa logo',
     details: [
       'Processed confidential student records, transcripts, and admissions documents with accuracy.',
@@ -43,7 +43,7 @@ const experiences = [
     period: 'Sep 2025 — May 2026',
     role: 'Student Services Clerk',
     company: 'UH Mānoa · School of Travel Industry Management',
-    logo: '/logos/uh-manoa.png',
+    logo: '/logos/uh.jpeg',
     logoAlt: 'University of Hawaiʻi at Mānoa logo',
     details: [
       'Assisted with office operations, communication management, and student support services.',
@@ -54,7 +54,7 @@ const experiences = [
     period: 'Aug 2022 — Aug 2024',
     role: 'Welcome Center Assistant',
     company: 'University of Hawaiʻi at Mānoa',
-    logo: '/logos/uh-manoa.png',
+    logo: '/logos/uh.jpeg',
     logoAlt: 'University of Hawaiʻi at Mānoa logo',
     details: [
       'Assisted prospective and current students through in-person, email, and phone communication.',
