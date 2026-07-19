@@ -7,8 +7,8 @@ const experiences = [
   {
     period: 'Jul 2026 — Present',
     role: 'Human Resources Specialist I',
-    company: 'City & County of Honolulu',
-    details: ['Supporting training and development initiatives that strengthen people, policy, and public service.']
+    company: 'City and County of Honolulu · Department of Human Resources',
+    details: []
   },
   {
     period: 'Jan 2025 — Jun 2026',
@@ -141,9 +141,11 @@ function App() {
               <div className="timeline-main">
                 <h3>{item.role}</h3>
                 <p className="company">{item.company}</p>
-                <ul className="details">
-                  {item.details.map((detail) => <li key={detail}>{detail}</li>)}
-                </ul>
+                {item.details.length > 0 && (
+                  <ul className="details">
+                    {item.details.map((detail) => <li key={detail}>{detail}</li>)}
+                  </ul>
+                )}
               </div>
             </article>
           ))}
