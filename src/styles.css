@@ -52,7 +52,7 @@ em { color: var(--coral); font-weight: 500; }
 .hero-mark { justify-self: center; width: clamp(220px, 24vw, 370px); aspect-ratio: .82; position: relative; color: var(--forest); }
 .hero-mark img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 50% 42%; border-radius: 48% 48% 6px 6px; filter: saturate(.78) contrast(.96); }
 .portrait-ring { position: absolute; width: 112%; aspect-ratio: 1; border: 1px solid rgba(23,61,54,.28); border-radius: 50%; top: -15%; left: -13%; z-index: -1; }
-.hero-mark p { position: absolute; bottom: -55px; right: -20px; font: italic 18px/1.45 'Playfair Display', serif; }
+.hero-mark p { position: absolute; top: calc(100% + 18px); bottom: auto; right: 0; margin: 0; padding-top: 10px; border-top: 1px solid var(--coral); color: var(--ink); text-align: right; font: italic 18px/1.4 'Playfair Display', serif; }
 .hero-orbit { position: absolute; border: 1px solid rgba(23,61,54,.08); border-radius: 50%; }
 .orbit-one { width: 680px; height: 680px; right: -100px; top: -160px; }
 .orbit-two { width: 480px; height: 480px; right: 0; top: -60px; }
@@ -159,7 +159,7 @@ footer h2 { font: 500 clamp(47px, 7.2vw, 100px)/1.02 'Playfair Display', serif; 
   .nav-contact { font: 400 13px 'DM Sans', sans-serif; margin-top: 20px; }
   .hero { min-height: auto; grid-template-columns: 1fr; padding-top: 135px; padding-bottom: 105px; align-content: start; }
   .hero-mark { position: relative; width: min(72vw, 330px); right: auto; top: auto; opacity: 1; margin: 78px auto 28px; justify-self: center; }
-  .hero-mark p { right: -18px; bottom: -52px; }
+  .hero-mark p { top: calc(100% + 16px); right: 0; bottom: auto; }
   .hero-intro, .hero-actions { margin-left: 0; }
   .hero-intro { max-width: 540px; }
   .scroll-note { display: none; }
@@ -187,7 +187,7 @@ footer h2 { font: 500 clamp(47px, 7.2vw, 100px)/1.02 'Playfair Display', serif; 
   .hero-intro { font-size: 16px; line-height: 1.7; }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 20px; }
   .hero-mark { width: min(80vw, 300px); margin-top: 66px; }
-  .hero-mark p { right: 0; bottom: -50px; font-size: 16px; }
+  .hero-mark p { top: calc(100% + 15px); right: 0; bottom: auto; font-size: 16px; }
   .section { padding-left: 22px; padding-right: 22px; }
   .section-label { margin-bottom: 45px; }
   .intro h2, .skills h2 { font-size: clamp(39px, 12vw, 52px); }
