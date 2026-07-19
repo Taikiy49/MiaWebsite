@@ -167,7 +167,7 @@ function App() {
           <a href="#experience" onClick={closeMenu}>Experience</a>
           <a href="#pookela" onClick={closeMenu}>Highlights</a>
           <a href="#skills" onClick={closeMenu}>Expertise</a>
-          <a href="/Mia-Umeda-Resume.pdf" download onClick={closeMenu}>Résumé</a>
+          <a href="https://drive.google.com/file/d/1B3dpS-GN93HW5pTz9WblHGrDE4g9yHCm/view?usp=sharing" target="_blank" rel="noreferrer" onClick={closeMenu}>Résumé</a>
           <a className="nav-contact" href="mailto:umedamia@gmail.com" onClick={closeMenu}>Let’s connect <ArrowUpRight size={15} /></a>
         </div>
       </nav>
@@ -181,7 +181,7 @@ function App() {
           <p className="hero-intro">A human resources professional creating thoughtful, well-designed experiences that help people learn, grow, and do their best work.</p>
           <div className="hero-actions">
             <a href="#experience" className="button primary">Explore my work <ArrowDown size={17} /></a>
-            <a href="/Mia-Umeda-Resume.pdf" className="text-link" download><FileText size={15} /> Résumé</a>
+            <a href="https://drive.google.com/file/d/1B3dpS-GN93HW5pTz9WblHGrDE4g9yHCm/view?usp=sharing" className="text-link" target="_blank" rel="noreferrer"><FileText size={15} /> Résumé</a>
             <a href="https://linkedin.com/in/miaumeda" className="text-link" target="_blank" rel="noreferrer"><span className="linkedin-mark">in</span> LinkedIn</a>
           </div>
         </div>
@@ -396,7 +396,7 @@ function App() {
         <a className="email" href="mailto:umedamia@gmail.com">umedamia@gmail.com <ArrowUpRight /></a>
         <div className="footer-links">
           <a href="https://linkedin.com/in/miaumeda" target="_blank" rel="noreferrer"><span className="linkedin-mark">in</span> LinkedIn</a>
-          <a href="/Mia-Umeda-Resume.pdf" download><FileText size={16} /> Download résumé</a>
+          <a href="https://drive.google.com/file/d/1B3dpS-GN93HW5pTz9WblHGrDE4g9yHCm/view?usp=sharing" target="_blank" rel="noreferrer"><FileText size={16} /> View résumé</a>
         </div>
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Mia Umeda</p>
