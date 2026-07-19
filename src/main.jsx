@@ -72,6 +72,9 @@ function App() {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener('scroll', onScroll);
+    if (window.location.hash) {
+      requestAnimationFrame(() => document.querySelector(window.location.hash)?.scrollIntoView());
+    }
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -148,33 +151,40 @@ function App() {
       </section>
 
       <section className="pookela section" id="pookela">
-        <div className="pookela-heading">
-          <div className="section-label"><span>03</span> Featured achievement</div>
-          <p className="kicker">Poʻokela Internship Program · 2026</p>
-          <h2>Learning in service.<br /><em>Leading with purpose.</em></h2>
-          <p className="pookela-intro">At the Honolulu Liquor Commission, Mia transformed her internship experience into practical contributions across employee training, workplace education, and event coordination.</p>
-        </div>
-        <figure className="presentation-feature">
-          <img src="/pookela_presentation_picture.jpeg" alt="Mia Umeda presenting her Honolulu Liquor Commission internship accomplishments at the Poʻokela Graduation Ceremony" />
-          <figcaption>
-            <span>01 / Presenting the work</span>
-            <p>Mia shared the training initiatives, event planning, and employee education projects she completed while serving with the Honolulu Liquor Commission.</p>
-          </figcaption>
-        </figure>
-        <div className="recognition-feature">
-          <figure>
-            <img src="/pookela_group_picture.jpeg" alt="Mia Umeda with the Mayor and City and County of Honolulu leaders at the Poʻokela Graduation Ceremony" />
-          </figure>
-          <div className="recognition-copy">
-            <span className="feature-index">02 / Recognition</span>
-            <h3>Poʻokela Graduation Ceremony</h3>
-            <p>Recognized by the Mayor for her contributions to the City and County of Honolulu, alongside leaders who supported and celebrated the program’s graduates.</p>
+        <div className="section-label"><span>03</span> Featured achievement</div>
+        <div className="pookela-case-study">
+          <div className="pookela-heading">
+            <p className="kicker">Poʻokela Internship Program · 2026</p>
+            <h2>Learning in service.<br /><em>Leading with purpose.</em></h2>
+            <p className="pookela-intro">At the Honolulu Liquor Commission, I turned my internship experience into practical contributions across employee training, workplace education, and event coordination.</p>
             <div className="achievement-list">
               <span>Training development</span>
               <span>Employee education</span>
               <span>Event planning</span>
               <span>Public service</span>
             </div>
+          </div>
+          <figure className="presentation-feature">
+            <div className="image-frame">
+              <img src="/pookela_presentation_picture.jpeg" alt="I am presenting my Honolulu Liquor Commission internship accomplishments at the Poʻokela Graduation Ceremony" />
+              <span className="photo-label">Presenting my work</span>
+            </div>
+            <figcaption>
+              <span>01 / The presentation</span>
+              <p>I presented the training programs, events, and employee education projects I helped bring to life during my time with the Commission.</p>
+            </figcaption>
+          </figure>
+        </div>
+        <div className="recognition-feature">
+          <figure>
+            <img src="/pookela_group_picture.jpeg" alt="I am pictured with the Mayor and City and County of Honolulu leaders at the Poʻokela Graduation Ceremony" />
+            <figcaption>Poʻokela Graduation Ceremony · Honolulu, Hawaiʻi</figcaption>
+          </figure>
+          <div className="recognition-copy">
+            <span className="feature-index">02 / Recognition</span>
+            <div className="recognition-mark">✦</div>
+            <h3>A meaningful close to a memorable chapter.</h3>
+            <p>At the Poʻokela Graduation Ceremony, I was recognized by the Mayor for my contributions to the City and County of Honolulu. It was an honor to celebrate alongside the leaders and mentors who supported my growth throughout the program.</p>
           </div>
         </div>
       </section>
