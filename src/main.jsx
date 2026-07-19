@@ -8,12 +8,16 @@ const experiences = [
     period: 'Jul 2026 — Present',
     role: 'Human Resources Specialist I',
     company: 'City and County of Honolulu · Department of Human Resources',
+    logo: '/logos/honolulu-seal.png',
+    logoAlt: 'City and County of Honolulu seal',
     details: []
   },
   {
     period: 'Jan 2025 — Jun 2026',
     role: 'Admissions Operations Assistant',
     company: 'University of Hawaiʻi at Mānoa · Undergraduate Admissions',
+    logo: '/logos/uh-manoa.png',
+    logoAlt: 'University of Hawaiʻi at Mānoa logo',
     details: [
       'Processed confidential student records, transcripts, and admissions documents with accuracy.',
       'Supported office operations through data entry, scanning, and administrative coordination.'
@@ -23,6 +27,8 @@ const experiences = [
     period: 'Jan 2026 — May 2026',
     role: 'Poʻokela Internship Program Intern',
     company: 'Honolulu Liquor Commission',
+    logo: '/logos/honolulu-seal.png',
+    logoAlt: 'City and County of Honolulu seal',
     details: [
       'Created training materials and voice-over presentations related to workplace policies and compliance.',
       'Supported employee education initiatives on workplace safety, harassment prevention, and professional conduct.',
@@ -33,6 +39,8 @@ const experiences = [
     period: 'Sep 2025 — May 2026',
     role: 'Student Services Clerk',
     company: 'UH Mānoa · School of Travel Industry Management',
+    logo: '/logos/uh-manoa.png',
+    logoAlt: 'University of Hawaiʻi at Mānoa logo',
     details: [
       'Assisted with office operations, communication management, and student support services.',
       'Supported faculty, students, and public inquiries while coordinating school activities.'
@@ -42,6 +50,8 @@ const experiences = [
     period: 'Aug 2022 — Aug 2024',
     role: 'Welcome Center Assistant',
     company: 'University of Hawaiʻi at Mānoa',
+    logo: '/logos/uh-manoa.png',
+    logoAlt: 'University of Hawaiʻi at Mānoa logo',
     details: [
       'Assisted prospective and current students through in-person, email, and phone communication.',
       'Represented the university at outreach and recruitment events.'
@@ -51,6 +61,8 @@ const experiences = [
     period: 'May 2023 — Dec 2023',
     role: 'Executive Vice President',
     company: 'SHRM · Aloha Chapter',
+    logo: '/logos/shrm.png',
+    logoAlt: 'Society for Human Resource Management logo',
     details: [
       'Coordinated community service initiatives and collaborative student events.',
       'Supported Executive Board leadership and organizational operations.'
@@ -139,8 +151,15 @@ function App() {
               <div className="timeline-number">0{index + 1}</div>
               <div className="timeline-date">{item.period}</div>
               <div className="timeline-main">
-                <h3>{item.role}</h3>
-                <p className="company">{item.company}</p>
+                <div className="experience-top">
+                  <div>
+                    <h3>{item.role}</h3>
+                    <p className="company">{item.company}</p>
+                  </div>
+                  <div className="logo-badge">
+                    <img src={item.logo} alt={item.logoAlt} />
+                  </div>
+                </div>
                 {item.details.length > 0 && (
                   <ul className="details">
                     {item.details.map((detail) => <li key={detail}>{detail}</li>)}

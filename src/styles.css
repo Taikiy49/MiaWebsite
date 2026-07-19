@@ -79,6 +79,10 @@ em { color: var(--coral); font-weight: 500; }
 .timeline-number { color: var(--coral); font-size: 10px; letter-spacing: .14em; padding-top: 5px; }
 .timeline-date { color: rgba(255,255,255,.6); font-size: 12px; padding-top: 5px; }
 .timeline-main h3 { font: 500 clamp(23px, 2.3vw, 34px)/1.15 'Playfair Display', serif; margin: 0 0 8px; }
+.experience-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; }
+.experience-top > div:first-child { min-width: 0; }
+.logo-badge { width: 76px; height: 62px; flex: 0 0 76px; display: grid; place-items: center; padding: 10px; border: 1px solid rgba(255,255,255,.16); border-radius: 3px; background: rgba(251,249,244,.96); box-shadow: 0 9px 28px rgba(0,0,0,.12); }
+.logo-badge img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply; }
 .company { color: var(--sage); margin: 0; font-size: 13px; }
 .details { max-width: 750px; color: rgba(255,255,255,.66); line-height: 1.65; font-size: 14px; margin: 18px 0 0; padding-left: 17px; }
 .details li + li { margin-top: 7px; }
@@ -238,6 +242,8 @@ footer h2 { font: 500 clamp(47px, 7.2vw, 100px)/1.02 'Playfair Display', serif; 
   .timeline-row { grid-template-columns: 27px 1fr; gap: 13px; padding: 28px 0; }
   .timeline-row:hover { padding-left: 0; }
   .timeline-main h3 { font-size: 25px; }
+  .experience-top { gap: 14px; }
+  .logo-badge { width: 58px; height: 50px; flex-basis: 58px; padding: 8px; }
   .details { font-size: 13px; }
   .skill-list { grid-template-columns: 1fr; }
   .skill:nth-child(odd) { margin-right: 0; }
