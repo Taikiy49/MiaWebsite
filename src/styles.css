@@ -148,12 +148,17 @@ em { color: var(--coral); font-weight: 500; }
 .high-school-row span { display: block; font-size: 12px; margin-top: 7px; }
 .seal { width: 66px; height: 66px; border: 1px solid var(--ink); border-radius: 50%; display: grid; place-content: center; text-align: center; font: 500 16px/1 'Playfair Display', serif; }
 .seal small { font: 7px 'DM Sans', sans-serif; letter-spacing: .15em; }
-.award-card { background: var(--coral); padding: clamp(38px, 4.5vw, 66px); display: flex; flex-direction: column; justify-content: flex-end; }
-.award-card .kicker { color: var(--ink); margin-bottom: auto; }
-.award-star { font-size: 62px; margin: 40px 0 15px; }
-.award-card h3 { font: 500 clamp(27px, 3vw, 41px)/1.08 'Playfair Display', serif; margin: 0 0 23px; }
-.award-card > p:not(.kicker) { font-size: 14px; line-height: 1.7; }
-.award-card > span { font-size: 10px; text-transform: uppercase; letter-spacing: .12em; margin-top: 24px; }
+.award-card { background: var(--coral); display: flex; flex-direction: column; overflow: hidden; }
+.copenhagen-photo { margin: 0; position: relative; min-height: 260px; flex: .9; overflow: hidden; }
+.copenhagen-photo img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center 54%; transition: transform .7s ease; }
+.award-card:hover .copenhagen-photo img { transform: scale(1.025); }
+.copenhagen-photo figcaption { position: absolute; left: 14px; bottom: 14px; padding: 8px 10px; color: var(--paper); background: rgba(18,58,51,.88); font-size: 8px; text-transform: uppercase; letter-spacing: .13em; }
+.award-content { padding: clamp(30px, 3.5vw, 48px); }
+.award-card .kicker { color: var(--ink); margin-bottom: 26px; }
+.award-star { font-size: 38px; margin: 0 0 12px; }
+.award-card h3 { font: 500 clamp(25px, 2.7vw, 38px)/1.08 'Playfair Display', serif; margin: 0 0 20px; }
+.award-content > p:not(.kicker) { font-size: 13px; line-height: 1.65; }
+.award-content > span { display: block; font-size: 9px; text-transform: uppercase; letter-spacing: .12em; margin-top: 22px; }
 
 footer { background: var(--forest); color: var(--paper); text-align: center; padding: clamp(90px, 12vw, 160px) clamp(24px, 6vw, 90px) 30px; }
 footer .eyebrow { justify-content: center; color: rgba(255,255,255,.65); }
@@ -191,7 +196,8 @@ footer h2 { font: 500 clamp(47px, 7.2vw, 100px)/1.02 'Playfair Display', serif; 
   .education-card { grid-column: 2; }
   .award-card { grid-column: 1 / -1; }
   .education-card { min-height: 500px; }
-  .award-card { min-height: 450px; }
+  .award-card { min-height: 450px; display: grid; grid-template-columns: 1fr 1fr; }
+  .copenhagen-photo { min-height: 450px; }
 }
 
 @media (max-width: 520px) {
@@ -229,6 +235,8 @@ footer h2 { font: 500 clamp(47px, 7.2vw, 100px)/1.02 'Playfair Display', serif; 
   .education { grid-template-columns: 1fr; }
   .grad-card { min-height: 540px; }
   .education-card, .award-card { grid-column: auto; }
+  .award-card { display: flex; min-height: 0; }
+  .copenhagen-photo { min-height: 420px; }
   .education-card { padding: 38px 28px; }
   .education-card h2 { font-size: 30px; overflow-wrap: anywhere; }
   .school-row { align-items: flex-start; gap: 20px; }

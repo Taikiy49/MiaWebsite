@@ -248,11 +248,17 @@ function App() {
           </div>
         </div>
         <div className="award-card">
-          <p className="kicker">Recognition</p>
-          <div className="award-star">✦</div>
-          <h3>William R. Johnson Scholarship</h3>
-          <p>Awarded by the Shidler College of Business for study abroad at Copenhagen Business School.</p>
-          <span>Fall 2024 · Copenhagen, Denmark</span>
+          <figure className="copenhagen-photo">
+            <img src="/nyhavn.jpeg" alt="Me at Nyhavn during my study-abroad experience in Copenhagen, Denmark" />
+            <figcaption>Nyhavn · Copenhagen</figcaption>
+          </figure>
+          <div className="award-content">
+            <p className="kicker">Recognition</p>
+            <div className="award-star">✦</div>
+            <h3>William R. Johnson Scholarship</h3>
+            <p>Awarded by the Shidler College of Business for my study-abroad experience at Copenhagen Business School.</p>
+            <span>Fall 2024 · Copenhagen, Denmark</span>
+          </div>
         </div>
       </section>
 
