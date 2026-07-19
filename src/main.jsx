@@ -208,7 +208,7 @@ function App() {
         </div>
         <div className="timeline">
           {experiences.map((item, index) => (
-            <article className="timeline-row" key={item.role} data-reveal style={{ '--reveal-delay': `${Math.min(index * 55, 220)}ms` }}>
+            <article className="timeline-row" key={item.role}>
               <div className="timeline-number">0{index + 1}</div>
               <div className="timeline-date">{item.period}</div>
               <div className="timeline-main">
@@ -334,15 +334,15 @@ function App() {
         </div>
       </section>
 
-      <section className="education section">
-        <figure className="grad-card" data-reveal>
+      <section className="education section" data-reveal>
+        <figure className="grad-card">
           <img src="/mia_uh_grad.jpeg" alt="Me celebrating my graduation from the University of Hawaiʻi at Mānoa" />
           <figcaption>
             <span>Class of 2026</span>
             <strong>University of Hawaiʻi at Mānoa</strong>
           </figcaption>
         </figure>
-        <div className="education-card" data-reveal style={{ '--reveal-delay': '90ms' }}>
+        <div className="education-card">
           <div className="section-label light"><span>06</span> Education</div>
           <p className="degree-type">Bachelor of Business Administration</p>
           <h2>Human Resource Management,<br />International Business & Management</h2>
@@ -354,7 +354,7 @@ function App() {
             <div><strong>Henry J. Kaiser High School</strong><span>High School Diploma · Honolulu, Hawaiʻi</span></div>
           </div>
         </div>
-        <div className="award-card" data-reveal style={{ '--reveal-delay': '180ms' }}>
+        <div className="award-card">
           <figure className="copenhagen-photo">
             <img src="/nyhavn.jpeg" alt="Me at Nyhavn during my study-abroad experience in Copenhagen, Denmark" />
             <figcaption>Nyhavn · Copenhagen</figcaption>
@@ -369,7 +369,7 @@ function App() {
         </div>
       </section>
 
-      <footer id="contact" data-reveal>
+      <footer id="contact">
         <p className="eyebrow"><span /> Let’s work together</p>
         <h2>Good work starts with<br /><em>a conversation.</em></h2>
         <a className="email" href="mailto:umedamia@gmail.com">umedamia@gmail.com <ArrowUpRight /></a>
