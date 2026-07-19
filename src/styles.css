@@ -99,6 +99,16 @@ em { color: var(--coral); font-weight: 500; }
 .company { color: var(--sage); margin: 0; font-size: 13px; }
 .details { max-width: 750px; color: rgba(255,255,255,.66); line-height: 1.65; font-size: 14px; margin: 18px 0 0; padding-left: 17px; }
 .details li + li { margin-top: 7px; }
+.experience-gallery { max-width: 720px; margin-top: 28px; border: 1px solid rgba(255,255,255,.16); }
+.experience-gallery-frame { overflow: hidden; background: rgba(0,0,0,.14); }
+.experience-gallery-frame img { display: block; width: 100%; aspect-ratio: 1.68; object-fit: cover; object-position: center; animation: studyReveal .3s ease both; }
+.experience-gallery-bar { min-height: 64px; padding: 12px 14px; display: flex; align-items: center; justify-content: space-between; gap: 20px; background: rgba(255,255,255,.04); }
+.experience-gallery-bar > div:first-child span { display: block; margin-bottom: 5px; color: var(--coral); font-size: 7px; font-weight: 600; text-transform: uppercase; letter-spacing: .15em; }
+.experience-gallery-bar strong { font: 500 13px 'Playfair Display', serif; }
+.gallery-controls { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
+.gallery-controls button { width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.22); border-radius: 50%; color: var(--paper); background: transparent; cursor: pointer; transition: border-color .2s, color .2s; }
+.gallery-controls button:hover { border-color: var(--coral); color: var(--coral); }
+.gallery-controls > span { color: rgba(255,255,255,.52); font-size: 8px; letter-spacing: .08em; }
 
 .pookela { background: var(--paper); }
 .pookela > .section-label { margin-bottom: 68px; }
@@ -292,6 +302,8 @@ footer h2 { font: 500 clamp(47px, 7.2vw, 100px)/1.02 'Playfair Display', serif; 
   .logo-badge { width: 64px; height: 52px; flex-basis: 64px; }
   .logo-badge img[src*="uh.jpeg"] { width: 52px; height: 52px; }
   .details { font-size: 13px; }
+  .experience-gallery-bar { align-items: flex-start; flex-direction: column; }
+  .gallery-controls { align-self: stretch; justify-content: space-between; }
   .skill-list { grid-template-columns: 1fr; }
   .skill:last-child { grid-column: auto; }
   .skill { min-height: 72px; }

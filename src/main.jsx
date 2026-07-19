@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
-  ArrowDown, ArrowUpRight, Cloud, Code2, Database,
+  ArrowDown, ArrowUpRight, ChevronLeft, ChevronRight, Cloud, Code2, Database,
   FileCheck2, FileText, GraduationCap, Handshake, Languages, MapPin, Menu,
   MonitorCog, Presentation, School, UserSearch, X
 } from 'lucide-react';
@@ -70,6 +70,10 @@ const experiences = [
     details: [
       'Coordinated community service initiatives and collaborative student events.',
       'Supported Executive Board leadership and organizational operations.'
+    ],
+    gallery: [
+      { src: '/shrm1.png', caption: 'SHRM Aloha Chapter community' },
+      { src: '/shrm2.png', caption: 'Professional Interaction Night · Spring 2023' }
     ]
   }
 ];
@@ -128,6 +132,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeStudyId, setActiveStudyId] = useState('roehampton');
+  const [activeShrmPhoto, setActiveShrmPhoto] = useState(0);
   const activeStudy = studyPrograms.find((program) => program.id === activeStudyId);
 
   useEffect(() => {
@@ -242,6 +247,24 @@ function App() {
                   <ul className="details">
                     {item.details.map((detail) => <li key={detail}>{detail}</li>)}
                   </ul>
+                )}
+                {item.gallery && (
+                  <div className="experience-gallery">
+                    <div className="experience-gallery-frame" aria-live="polite">
+                      <img key={item.gallery[activeShrmPhoto].src} src={item.gallery[activeShrmPhoto].src} alt={item.gallery[activeShrmPhoto].caption} />
+                    </div>
+                    <div className="experience-gallery-bar">
+                      <div>
+                        <span>SHRM Aloha Chapter</span>
+                        <strong>{item.gallery[activeShrmPhoto].caption}</strong>
+                      </div>
+                      <div className="gallery-controls">
+                        <button type="button" onClick={() => setActiveShrmPhoto((activeShrmPhoto + item.gallery.length - 1) % item.gallery.length)} aria-label="Previous SHRM photo"><ChevronLeft size={16} /></button>
+                        <span>0{activeShrmPhoto + 1} / 0{item.gallery.length}</span>
+                        <button type="button" onClick={() => setActiveShrmPhoto((activeShrmPhoto + 1) % item.gallery.length)} aria-label="Next SHRM photo"><ChevronRight size={16} /></button>
+                      </div>
+                    </div>
+                  </div>
                 )}
               </div>
             </article>
