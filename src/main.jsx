@@ -90,16 +90,9 @@ const skills = [
 
 const studyPrograms = [
   {
-    id: 'yonsei',
-    tab: 'Yonsei University',
-    institution: 'Yonsei University',
-    location: 'South Korea',
-    image: '/yonsei.jpeg',
-    alt: 'Me during my study-abroad experience at Yonsei University in South Korea',
-    copy: 'At Yonsei University, I had the opportunity to live and learn in South Korea. The experience became an important part of my international education and broadened the way I see people, culture, and community.'
-  },
-  {
     id: 'roehampton',
+    step: '01',
+    place: 'London',
     tab: 'University of Roehampton',
     institution: 'University of Roehampton',
     location: 'London, United Kingdom',
@@ -109,19 +102,32 @@ const studyPrograms = [
   },
   {
     id: 'copenhagen',
+    step: '02',
+    place: 'Copenhagen',
     tab: 'Copenhagen Business School',
     institution: 'Copenhagen Business School',
     location: 'Copenhagen, Denmark',
     image: '/nyhavn.jpeg',
     alt: 'Me at Nyhavn during my study-abroad experience at Copenhagen Business School',
     copy: 'In Fall 2024, I studied abroad at Copenhagen Business School in Denmark with support from the William R. Johnson Scholarship. The experience strengthened the international perspective at the heart of my business education.'
+  },
+  {
+    id: 'yonsei',
+    step: '03',
+    place: 'South Korea',
+    tab: 'Yonsei University',
+    institution: 'Yonsei University',
+    location: 'South Korea',
+    image: '/yonsei.jpeg',
+    alt: 'Me during my study-abroad experience at Yonsei University in South Korea',
+    copy: 'At Yonsei University, I had the opportunity to live and learn in South Korea. The experience became an important part of my international education and broadened the way I see people, culture, and community.'
   }
 ];
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeStudyId, setActiveStudyId] = useState('yonsei');
+  const [activeStudyId, setActiveStudyId] = useState('roehampton');
   const activeStudy = studyPrograms.find((program) => program.id === activeStudyId);
 
   useEffect(() => {
@@ -316,8 +322,11 @@ function App() {
                   className={activeStudyId === program.id ? 'active' : ''}
                   onClick={() => setActiveStudyId(program.id)}
                 >
-                  <span>{activeStudyId === program.id ? '●' : '○'}</span>
-                  {program.tab}
+                  <span className="study-step">{program.step}</span>
+                  <span className="study-tab-label">
+                    <small>{program.place}</small>
+                    {program.tab}
+                  </span>
                 </button>
               ))}
             </div>
