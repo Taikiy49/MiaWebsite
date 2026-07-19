@@ -64,15 +64,16 @@ em { color: var(--coral); font-weight: 500; }
 .section-label span { color: var(--coral); }
 .section-label.light { color: rgba(255,255,255,.72); }
 .intro { background: var(--paper); }
-.intro-content { display: grid; grid-template-columns: .9fr .56fr .7fr; gap: clamp(34px, 5vw, 78px); align-items: center; }
+.intro-content { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(55px, 9vw, 145px); align-items: start; }
 .intro h2, .skills h2 { font: 500 clamp(43px, 5.4vw, 78px)/1.1 'Playfair Display', serif; letter-spacing: -.035em; margin: 0; }
-.about-photo { margin: 0; position: relative; overflow: hidden; min-height: 510px; }
-.about-photo img { display: block; width: 100%; height: 100%; min-height: 510px; object-fit: cover; object-position: 56% center; transition: transform .7s ease; }
+.about-side { min-width: 0; }
+.about-photo { margin: 0 0 38px; position: relative; overflow: hidden; }
+.about-photo img { display: block; width: 100%; height: clamp(280px, 27vw, 385px); object-fit: cover; object-position: 56% 62%; transition: transform .7s ease; }
 .about-photo:hover img { transform: scale(1.025); }
 .about-photo::after { content: ''; position: absolute; inset: 58% 0 0; background: linear-gradient(transparent, rgba(8,31,27,.78)); pointer-events: none; }
 .about-photo figcaption { position: absolute; z-index: 1; left: 22px; right: 22px; bottom: 22px; color: var(--paper); font: italic 16px/1.4 'Playfair Display', serif; }
 .about-photo figcaption span { display: block; margin-bottom: 7px; color: #f6a998; font: 600 8px 'DM Sans', sans-serif; text-transform: uppercase; letter-spacing: .16em; }
-.intro-body { padding-top: 10px; max-width: 520px; }
+.intro-body { max-width: 680px; }
 .intro-body > p { font-size: 17px; line-height: 1.85; font-weight: 300; margin: 0 0 25px; }
 .location { display: flex; align-items: center; gap: 8px; font-size: 12px; margin-top: 42px; text-transform: uppercase; letter-spacing: .12em; }
 
@@ -220,8 +221,8 @@ footer h2 { font: 500 clamp(47px, 7.2vw, 100px)/1.02 'Playfair Display', serif; 
   .skill-list { grid-template-columns: repeat(2, 1fr); }
   .skill, .skill:nth-last-child(-n+2) { grid-column: auto; }
   .skill:last-child { grid-column: 1 / -1; }
-  .about-photo { width: min(70vw, 460px); min-height: 560px; }
-  .about-photo img { min-height: 560px; }
+  .about-photo { width: 100%; }
+  .about-photo img { height: clamp(300px, 55vw, 430px); }
   .pookela-case-study, .presentation-feature figcaption, .recognition-feature { grid-template-columns: 1fr; }
   .pookela-case-study { gap: 58px; }
   .presentation-feature figcaption { gap: 16px; }
@@ -271,8 +272,7 @@ footer h2 { font: 500 clamp(47px, 7.2vw, 100px)/1.02 'Playfair Display', serif; 
   .achievement-list { grid-template-columns: 1fr; }
   .achievement-list span:nth-child(odd) { margin-right: 0; }
   .intro-content { gap: 42px; }
-  .about-photo { width: 100%; min-height: 460px; }
-  .about-photo img { min-height: 460px; }
+  .about-photo img { height: 300px; }
   .intro-body > p { font-size: 15px; line-height: 1.8; }
   .timeline-row { grid-template-columns: 27px 1fr; gap: 13px; padding: 28px 0; }
   .timeline-row:hover { padding-left: 0; }
