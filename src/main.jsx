@@ -202,24 +202,24 @@ function App() {
       <section className="intro section" id="about">
         <div className="section-label"><span>01</span> About</div>
         <div className="intro-content" data-reveal>
-          <div className="about-primary">
-            <h2>I believe great workplaces begin with <em>genuine care.</em></h2>
+          <h2>I believe great workplaces begin with <em>genuine care.</em></h2>
+          <div className="about-grid">
             <figure className="about-photo">
               <img src="/about.jpeg" alt="Me in front of the Koʻolau mountains on Oʻahu" />
               <figcaption><span>Rooted in Hawaiʻi</span>Home shapes how I show up.</figcaption>
             </figure>
-          </div>
-          <div className="intro-body">
-            <div>
-              <p>Born and based in Honolulu, I bring a calm, people-centered approach to human resources. My experience spans employee training, public service, university operations, recruitment, and student support.</p>
-              <p>I’m energized by work that turns complex policies into clear guidance, creates welcoming experiences, and helps organizations invest meaningfully in their people.</p>
+            <div className="intro-body">
+              <div>
+                <p>Born and based in Honolulu, I bring a calm, people-centered approach to human resources. My experience spans employee training, public service, university operations, recruitment, and student support.</p>
+                <p>I’m energized by work that turns complex policies into clear guidance, creates welcoming experiences, and helps organizations invest meaningfully in their people.</p>
+              </div>
+              <div className="about-principles" aria-label="My approach">
+                <span>People-centered</span>
+                <span>Clear guidance</span>
+                <span>Meaningful growth</span>
+              </div>
+              <div className="location"><MapPin size={17} /> Honolulu, Hawaiʻi</div>
             </div>
-            <div className="about-principles" aria-label="My approach">
-              <span>People-centered</span>
-              <span>Clear guidance</span>
-              <span>Meaningful growth</span>
-            </div>
-            <div className="location"><MapPin size={17} /> Honolulu, Hawaiʻi</div>
           </div>
         </div>
       </section>
