@@ -50,6 +50,7 @@ em { color: var(--coral); font-weight: 500; }
 .button svg { transition: transform .2s; }
 .button:hover svg { transform: translateY(3px); }
 .text-link { font-size: 13px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--line); padding-bottom: 5px; }
+.linkedin-mark { width: 16px; height: 16px; display: inline-grid; place-items: center; border-radius: 2px; color: currentColor; border: 1px solid currentColor; font-size: 9px; font-weight: 600; line-height: 1; }
 .hero-mark { justify-self: center; width: clamp(220px, 24vw, 370px); aspect-ratio: .82; position: relative; color: var(--forest); }
 .hero-mark img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 50% 42%; border-radius: 48% 48% 6px 6px; filter: saturate(.78) contrast(.96); }
 .portrait-ring { position: absolute; width: 112%; aspect-ratio: 1; border: 1px solid rgba(23,61,54,.28); border-radius: 50%; top: -15%; left: -13%; z-index: -1; }
@@ -205,6 +206,10 @@ footer .eyebrow { justify-content: center; color: rgba(255,255,255,.65); }
 footer h2 { font: 500 clamp(47px, 7.2vw, 100px)/1.02 'Playfair Display', serif; letter-spacing: -.04em; margin: 40px 0 55px; }
 .email { display: inline-flex; align-items: center; gap: 18px; font-size: clamp(16px, 2vw, 24px); border-bottom: 1px solid rgba(255,255,255,.45); padding-bottom: 10px; }
 .email svg { color: var(--coral); }
+.footer-links { margin-top: 32px; display: flex; justify-content: center; gap: 10px; }
+.footer-links a { padding: 11px 15px; border: 1px solid rgba(255,255,255,.22); display: inline-flex; align-items: center; gap: 8px; font-size: 11px; transition: border-color .2s, background .2s; }
+.footer-links a:hover { border-color: var(--coral); background: rgba(255,255,255,.04); }
+.footer-links svg { color: var(--coral); }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,.16); margin-top: 130px; padding-top: 25px; display: grid; grid-template-columns: 1fr 1fr 1fr; font-size: 10px; text-transform: uppercase; letter-spacing: .15em; color: rgba(255,255,255,.55); }
 .footer-bottom p:first-child { text-align: left; }
 .footer-bottom a { text-align: right; }
@@ -304,6 +309,8 @@ footer h2 { font: 500 clamp(47px, 7.2vw, 100px)/1.02 'Playfair Display', serif; 
   footer h2 { font-size: clamp(43px, 13vw, 58px); }
   .email { font-size: 15px; gap: 10px; }
   .email svg { width: 18px; }
+  .footer-links { flex-direction: column; align-items: stretch; max-width: 230px; margin-left: auto; margin-right: auto; }
+  .footer-links a { justify-content: center; }
   .footer-bottom { grid-template-columns: 1fr; gap: 14px; text-align: center; }
   .footer-bottom { margin-top: 90px; }
   .footer-bottom p:first-child, .footer-bottom a { text-align: center; }

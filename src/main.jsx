@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   ArrowDown, ArrowUpRight, Cloud, Code2, Database,
-  FileCheck2, GraduationCap, Handshake, Languages, MapPin, Menu,
+  FileCheck2, FileText, GraduationCap, Handshake, Languages, MapPin, Menu,
   MonitorCog, Presentation, School, UserSearch, X
 } from 'lucide-react';
 import './styles.css';
@@ -167,6 +167,7 @@ function App() {
           <a href="#experience" onClick={closeMenu}>Experience</a>
           <a href="#pookela" onClick={closeMenu}>Highlights</a>
           <a href="#skills" onClick={closeMenu}>Expertise</a>
+          <a href="/Mia-Umeda-Resume.pdf" download onClick={closeMenu}>Résumé</a>
           <a className="nav-contact" href="mailto:umedamia@gmail.com" onClick={closeMenu}>Let’s connect <ArrowUpRight size={15} /></a>
         </div>
       </nav>
@@ -180,7 +181,8 @@ function App() {
           <p className="hero-intro">A human resources professional creating thoughtful, well-designed experiences that help people learn, grow, and do their best work.</p>
           <div className="hero-actions">
             <a href="#experience" className="button primary">Explore my work <ArrowDown size={17} /></a>
-            <a href="mailto:umedamia@gmail.com" className="text-link">Get in touch <ArrowUpRight size={16} /></a>
+            <a href="/Mia-Umeda-Resume.pdf" className="text-link" download><FileText size={15} /> Résumé</a>
+            <a href="https://linkedin.com/in/miaumeda" className="text-link" target="_blank" rel="noreferrer"><span className="linkedin-mark">in</span> LinkedIn</a>
           </div>
         </div>
         <div className="hero-mark" data-reveal data-reveal-right style={{ '--reveal-delay': '180ms' }}>
@@ -392,6 +394,10 @@ function App() {
         <p className="eyebrow"><span /> Let’s work together</p>
         <h2>Good work starts with<br /><em>a conversation.</em></h2>
         <a className="email" href="mailto:umedamia@gmail.com">umedamia@gmail.com <ArrowUpRight /></a>
+        <div className="footer-links">
+          <a href="https://linkedin.com/in/miaumeda" target="_blank" rel="noreferrer"><span className="linkedin-mark">in</span> LinkedIn</a>
+          <a href="/Mia-Umeda-Resume.pdf" download><FileText size={16} /> Download résumé</a>
+        </div>
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Mia Umeda</p>
           <p>Honolulu, Hawaiʻi</p>
