@@ -232,21 +232,21 @@ function App() {
               <figcaption>Yonsei University · South Korea</figcaption>
             </figure>
             <figure className="london-photo">
-              <img src="/london.jpeg" alt="Me in London during my study-abroad experience" />
-              <figcaption>Study abroad · London</figcaption>
+              <img src="/london.jpeg" alt="Me during my study-abroad experience at the University of Roehampton in London" />
+              <figcaption>University of Roehampton · London</figcaption>
             </figure>
           </div>
           <div className="global-study-copy">
             <p className="kicker">Study abroad</p>
             <h2>A wider world.<br /><em>A broader perspective.</em></h2>
-            <p>Studying abroad gave me the opportunity to live and learn in both South Korea and London. Each experience became an important part of my international education and broadened the way I see people, culture, and community.</p>
+            <p>I studied abroad at Yonsei University in South Korea and the University of Roehampton in London. Each experience became an important part of my international education and broadened the way I see people, culture, and community.</p>
             <div className="global-detail">
               <span>Institution</span>
               <strong>Yonsei University</strong>
             </div>
             <div className="global-detail">
-              <span>Experience</span>
-              <strong>London, United Kingdom</strong>
+              <span>Institution</span>
+              <strong>University of Roehampton · London, United Kingdom</strong>
             </div>
           </div>
         </div>
