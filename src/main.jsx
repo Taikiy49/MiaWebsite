@@ -76,9 +76,32 @@ const skills = [
   'Student Management Systems', 'Web Design', 'Conversational Japanese'
 ];
 
+const studyPrograms = [
+  {
+    id: 'yonsei',
+    tab: 'Yonsei University',
+    institution: 'Yonsei University',
+    location: 'South Korea',
+    image: '/yonsei.jpeg',
+    alt: 'Me during my study-abroad experience at Yonsei University in South Korea',
+    copy: 'At Yonsei University, I had the opportunity to live and learn in South Korea. The experience became an important part of my international education and broadened the way I see people, culture, and community.'
+  },
+  {
+    id: 'roehampton',
+    tab: 'University of Roehampton',
+    institution: 'University of Roehampton',
+    location: 'London, United Kingdom',
+    image: '/london.jpeg',
+    alt: 'Me during my study-abroad experience at the University of Roehampton in London',
+    copy: 'My time at the University of Roehampton gave me the opportunity to study and experience life in London. It added another valuable international perspective to my education.'
+  }
+];
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeStudyId, setActiveStudyId] = useState('yonsei');
+  const activeStudy = studyPrograms.find((program) => program.id === activeStudyId);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -226,27 +249,36 @@ function App() {
       <section className="global-study section">
         <div className="section-label light"><span>05</span> Global learning</div>
         <div className="global-study-layout">
-          <div className="global-photos">
-            <figure className="yonsei-photo">
-              <img src="/yonsei.jpeg" alt="Me during my study-abroad experience at Yonsei University in South Korea" />
-              <figcaption>Yonsei University · South Korea</figcaption>
-            </figure>
-            <figure className="london-photo">
-              <img src="/london.jpeg" alt="Me during my study-abroad experience at the University of Roehampton in London" />
-              <figcaption>University of Roehampton · London</figcaption>
-            </figure>
-          </div>
+          <figure className="study-photo" key={activeStudy.id}>
+            <img src={activeStudy.image} alt={activeStudy.alt} />
+            <figcaption>{activeStudy.institution} · {activeStudy.location}</figcaption>
+          </figure>
           <div className="global-study-copy">
             <p className="kicker">Study abroad</p>
             <h2>A wider world.<br /><em>A broader perspective.</em></h2>
-            <p>I studied abroad at Yonsei University in South Korea and the University of Roehampton in London. Each experience became an important part of my international education and broadened the way I see people, culture, and community.</p>
+            <div className="study-switcher" role="tablist" aria-label="Choose a study abroad experience">
+              {studyPrograms.map((program) => (
+                <button
+                  key={program.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={activeStudyId === program.id}
+                  className={activeStudyId === program.id ? 'active' : ''}
+                  onClick={() => setActiveStudyId(program.id)}
+                >
+                  <span>{activeStudyId === program.id ? '●' : '○'}</span>
+                  {program.tab}
+                </button>
+              ))}
+            </div>
+            <p className="study-copy" key={`${activeStudy.id}-copy`}>{activeStudy.copy}</p>
             <div className="global-detail">
               <span>Institution</span>
-              <strong>Yonsei University</strong>
+              <strong>{activeStudy.institution}</strong>
             </div>
             <div className="global-detail">
-              <span>Institution</span>
-              <strong>University of Roehampton · London, United Kingdom</strong>
+              <span>Location</span>
+              <strong>{activeStudy.location}</strong>
             </div>
           </div>
         </div>

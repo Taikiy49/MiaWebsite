@@ -122,21 +122,21 @@ em { color: var(--coral); font-weight: 500; }
 
 .global-study { background: var(--forest); color: var(--paper); }
 .global-study-layout { display: grid; grid-template-columns: .95fr 1.05fr; gap: clamp(55px, 9vw, 140px); align-items: center; }
-.global-photos { position: relative; min-height: 650px; }
-.yonsei-photo, .london-photo { margin: 0; position: absolute; overflow: hidden; }
-.yonsei-photo { width: 74%; left: 0; top: 0; }
-.london-photo { width: 58%; right: 0; bottom: 0; border: 10px solid var(--forest); }
-.yonsei-photo img, .london-photo img { display: block; width: 100%; object-fit: cover; transition: transform .65s ease; }
-.yonsei-photo img { height: 535px; object-position: center 52%; }
-.london-photo img { height: 340px; object-position: 70% 57%; }
-.yonsei-photo:hover img, .london-photo:hover img { transform: scale(1.025); }
-.yonsei-photo figcaption, .london-photo figcaption { position: absolute; left: 14px; bottom: 14px; padding: 9px 11px; background: rgba(18,58,51,.9); color: var(--paper); font-size: 8px; text-transform: uppercase; letter-spacing: .13em; }
+.study-photo { margin: 0; position: relative; overflow: hidden; animation: studyReveal .42s ease both; }
+.study-photo img { display: block; width: 100%; height: 630px; object-fit: cover; object-position: center 55%; }
+.study-photo figcaption { position: absolute; left: 16px; bottom: 16px; padding: 10px 13px; background: rgba(18,58,51,.9); color: var(--paper); font-size: 8px; text-transform: uppercase; letter-spacing: .13em; }
 .global-study-copy { max-width: 640px; }
 .global-study-copy h2 { font: 500 clamp(43px, 5.2vw, 74px)/1.08 'Playfair Display', serif; letter-spacing: -.04em; margin: 0 0 35px; }
-.global-study-copy > p:not(.kicker) { max-width: 570px; color: rgba(255,255,255,.72); font-size: 16px; font-weight: 300; line-height: 1.8; margin-bottom: 45px; }
+.study-switcher { display: flex; gap: 8px; margin: 0 0 30px; }
+.study-switcher button { border: 1px solid rgba(255,255,255,.22); background: transparent; color: rgba(255,255,255,.62); padding: 11px 14px; cursor: pointer; font-size: 11px; display: flex; align-items: center; gap: 8px; transition: .25s ease; }
+.study-switcher button:hover { border-color: rgba(255,255,255,.55); color: var(--paper); }
+.study-switcher button.active { color: var(--forest); background: var(--paper); border-color: var(--paper); }
+.study-switcher button span { color: var(--coral); font-size: 8px; }
+.study-copy { max-width: 570px; min-height: 86px; color: rgba(255,255,255,.72); font-size: 15px; font-weight: 300; line-height: 1.8; margin: 0 0 38px; animation: studyReveal .36s ease both; }
 .global-detail { display: grid; grid-template-columns: 110px 1fr; gap: 20px; padding: 16px 0; border-top: 1px solid rgba(255,255,255,.18); }
 .global-detail span { color: rgba(255,255,255,.48); font-size: 9px; text-transform: uppercase; letter-spacing: .15em; }
 .global-detail strong { font: 500 16px 'Playfair Display', serif; }
+@keyframes studyReveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
 .education { background: var(--paper); display: grid; grid-template-columns: .68fr 1.12fr .7fr; gap: 18px; padding: 22px; }
 .grad-card { min-width: 0; min-height: 590px; margin: 0; position: relative; overflow: hidden; background: var(--forest); }
@@ -201,9 +201,7 @@ footer h2 { font: 500 clamp(47px, 7.2vw, 100px)/1.02 'Playfair Display', serif; 
   .timeline-main { grid-column: 2; }
   .education { grid-template-columns: 1fr 1fr; }
   .global-study-layout { grid-template-columns: 1fr 1fr; gap: 45px; }
-  .global-photos { min-height: 570px; }
-  .yonsei-photo img { height: 470px; }
-  .london-photo img { height: 290px; }
+  .study-photo img { height: 560px; }
   .grad-card { min-height: 560px; }
   .education-card { grid-column: 2; }
   .award-card { grid-column: 1 / -1; }
@@ -225,9 +223,10 @@ footer h2 { font: 500 clamp(47px, 7.2vw, 100px)/1.02 'Playfair Display', serif; 
   .intro h2, .skills h2 { font-size: clamp(39px, 12vw, 52px); }
   .global-study-layout { grid-template-columns: 1fr; }
   .global-study-copy h2 { font-size: clamp(39px, 12vw, 52px); }
-  .global-photos { min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .yonsei-photo, .london-photo { position: relative; inset: auto; width: auto; border: 0; }
-  .yonsei-photo img, .london-photo img { height: 310px; }
+  .study-photo img { height: 460px; }
+  .study-switcher { flex-direction: column; }
+  .study-switcher button { justify-content: flex-start; }
+  .study-copy { min-height: 0; }
   .pookela-heading h2 { font-size: clamp(39px, 12vw, 52px); }
   .pookela-intro { font-size: 15px; }
   .presentation-feature img { aspect-ratio: 1.25; }
