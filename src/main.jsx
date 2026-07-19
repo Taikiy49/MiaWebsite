@@ -8,7 +8,7 @@ const experiences = [
     period: 'Jul 2026 — Present',
     role: 'Human Resources Specialist I',
     company: 'City and County of Honolulu · Department of Human Resources',
-    logo: '/logos/honolulu-seal.png',
+    logo: '/logos/city-county.png',
     logoAlt: 'City and County of Honolulu seal',
     details: []
   },
@@ -27,7 +27,7 @@ const experiences = [
     period: 'Jan 2026 — May 2026',
     role: 'Poʻokela Internship Program Intern',
     company: 'Honolulu Liquor Commission',
-    logo: '/logos/honolulu-seal.png',
+    logo: '/logos/city-county.png',
     logoAlt: 'City and County of Honolulu seal',
     details: [
       'Created training materials and voice-over presentations related to workplace policies and compliance.',
