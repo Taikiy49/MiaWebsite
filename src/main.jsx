@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { ArrowDown, ArrowUpRight, Check, Mail, MapPin, Menu, X } from 'lucide-react';
+import {
+  ArrowDown, ArrowUpRight, Cloud, Code2, Database,
+  FileCheck2, GraduationCap, Handshake, Languages, MapPin, Menu,
+  MonitorCog, Presentation, School, UserSearch, X
+} from 'lucide-react';
 import './styles.css';
 
 const experiences = [
@@ -71,9 +75,17 @@ const experiences = [
 ];
 
 const skills = [
-  'Training & Development', 'HR Policies', 'Recruitment', 'Employee Education',
-  'Customer Service', 'Data Entry', 'Microsoft Office', 'Google Workspace',
-  'Student Management Systems', 'Web Design', 'Conversational Japanese'
+  { name: 'Training & Development', group: 'People', icon: Presentation },
+  { name: 'HR Policies', group: 'HR Operations', icon: FileCheck2 },
+  { name: 'Recruitment', group: 'Talent', icon: UserSearch },
+  { name: 'Employee Education', group: 'Learning', icon: GraduationCap },
+  { name: 'Customer Service', group: 'Communication', icon: Handshake },
+  { name: 'Data Entry', group: 'Operations', icon: Database },
+  { name: 'Microsoft Office', group: 'Technology', icon: MonitorCog },
+  { name: 'Google Workspace', group: 'Technology', icon: Cloud },
+  { name: 'Student Management Systems', group: 'Higher Education', icon: School },
+  { name: 'Web Design', group: 'Digital', icon: Code2 },
+  { name: 'Conversational Japanese', group: 'Language', icon: Languages }
 ];
 
 const studyPrograms = [
@@ -250,7 +262,19 @@ function App() {
             <h2>Practical skills.<br /><em>Human impact.</em></h2>
           </div>
           <div className="skill-list">
-            {skills.map((skill) => <div className="skill" key={skill}><Check size={15} />{skill}</div>)}
+            {skills.map((skill) => {
+              const SkillIcon = skill.icon;
+              return (
+                <div className="skill" key={skill.name}>
+                  <div className="skill-icon"><SkillIcon size={20} strokeWidth={1.6} /></div>
+                  <div className="skill-text">
+                    <span>{skill.group}</span>
+                    <strong>{skill.name}</strong>
+                  </div>
+                  <ArrowUpRight className="skill-arrow" size={15} />
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
